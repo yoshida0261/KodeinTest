@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -35,8 +39,9 @@ dependencies {
     //implementation(project(":kodein-di-generic-jvm"))
 
     implementation 'org.kodein.di:kodein-di-framework-android-core:5.2.0'
-    /*
-    implementation(project(":kodein-di-generic-jvm"))
-    implementation(project(":framework:android:kodein-di-framework-android-x"))
-     */
+    implementation 'org.kodein.di:kodein-di-framework-android-x:5.2.0'
+    //implementation 'android:kodein-di-framework-android-x'
+
+    //implementation(project(":kodein-di-generic-jvm"))
+
 }

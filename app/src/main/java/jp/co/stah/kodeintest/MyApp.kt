@@ -2,16 +2,14 @@ package jp.co.stah.kodeintest
 
 //import org.kodein.di.android.closestKodein
 //import org.kodein.di.android.retainedKodein
+//import org.kodein.di.android.x.androidXModule
 import android.app.Application
 import jp.co.stah.kodeintest.coffee.Coffee
-import jp.co.stah.kodeintest.coffee.Kettle
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
-import org.kodein.di.generic.scoped
-import org.kodein.di.android.x.androidXModule
 
 
 class MyApp : Application() , KodeinAware {
@@ -23,7 +21,7 @@ class MyApp : Application() , KodeinAware {
 
 
     override val kodein = Kodein.lazy {
-        import(androidXModule(this@MyApp))
+        //import(androidXModule(this@MyApp))
 
         bind() from instance(Logger())
 
@@ -35,6 +33,12 @@ class MyApp : Application() , KodeinAware {
       //  bind<Kettle<Coffee>>() with scoped(WeakContextScope.of<Activity>()).singleton { Kettle<Coffee>(instance(), instance(),  provider()) }
     }
 
+
+    override fun onCreate() {
+        super.onCreate()
+       // val k = kodein
+       // println(k)
+    }
 
 
 }

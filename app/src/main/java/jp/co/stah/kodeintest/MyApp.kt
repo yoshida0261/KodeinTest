@@ -36,8 +36,8 @@ class MyApp : Application() , KodeinAware {
 
     override fun onCreate() {
         super.onCreate()
-       // val k = kodein
-       // println(k)
+        val k = kodein
+        println(k)
     }
 
 

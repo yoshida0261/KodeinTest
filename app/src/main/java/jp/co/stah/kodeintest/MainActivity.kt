@@ -1,8 +1,8 @@
 package jp.co.stah.kodeintest
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import org.kodein.di.*
 import org.kodein.di.android.closestKodein
 import org.kodein.di.android.retainedKodein

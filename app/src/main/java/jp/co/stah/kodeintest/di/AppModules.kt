@@ -1,8 +1,5 @@
 package jp.co.stah.kodeintest.di
 
-import android.content.Context
-import org.kodein.di.generic.*
-
 /*
 import me.jorgecastillo.kodein.common.data.local.InMemoryPhotosDataSource
 import me.jorgecastillo.kodein.common.data.network.UnsplashPhotosDataSource
@@ -20,17 +17,11 @@ import me.jorgecastillo.kodein.common.router.Navigator
 import me.jorgecastillo.kodein.common.router.PhotoAppNavigator
 import me.jorgecastillo.kodein.photoslist.domain.repository.PhotosRepository
 */
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
+//import retrofit2.converter.moshi.MoshiConverterFactory
+import android.content.Context
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
-import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
-import org.kodein.di.generic.singleton
-import org.kodein.di.generic.with
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 /**
  * Application scoped dependencies. Dependencies that we would need to reuse at any point in the
@@ -45,8 +36,8 @@ fun appModule(appContext: Context) = Kodein.Module("appModule") {
     bind<Logger>() with singleton { AndroidLogger() }
     bind<Invoker>() with singleton { UseCaseInvoker() }
 */
-    import(httpAppModule())
-    import(photosAppModule())
+ //   import(httpAppModule())
+   // import(photosAppModule())
 }
 
 /*

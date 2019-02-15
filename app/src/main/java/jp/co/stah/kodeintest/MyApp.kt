@@ -4,6 +4,7 @@ package jp.co.stah.kodeintest
 //import org.kodein.di.android.retainedKodein
 //import org.kodein.di.android.x.androidXModule
 import android.app.Application
+import android.support.annotation.VisibleForTesting
 import jp.co.stah.kodeintest.coffee.Coffee
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -18,6 +19,9 @@ class MyApp : Application() , KodeinAware {
     override val kodein = Kodein {
         bind<String>() with instance("Hello, Kodein!")
     }*/
+
+    @VisibleForTesting
+    var overrideBindings: Kodein.MainBuilder.() -> Unit = {}
 
 
     override val kodein = Kodein.lazy {

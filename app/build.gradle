@@ -13,6 +13,8 @@ ext {
     okhttpVersion = '3.11.0'
     glideVersion = '4.8.0'
     retrofitVersion = '2.4.0'
+    arrow_version = '0.8.1'
+
 }
 
 android {
@@ -44,6 +46,10 @@ dependencies {
 
     implementation 'org.kodein.di:kodein-di-generic-jvm:6.0.0'
     //implementation(project(":kodein-di-generic-jvm"))
+    implementation "io.arrow-kt:arrow-core:$arrow_version"
+    implementation "io.arrow-kt:arrow-syntax:$arrow_version"
+    implementation "io.arrow-kt:arrow-data:$arrow_version"
+
 
     implementation 'org.kodein.di:kodein-di-framework-android-core:5.2.0'
    // implementation 'org.kodein.di:kodein-di-framework-android-x:5.2.0'

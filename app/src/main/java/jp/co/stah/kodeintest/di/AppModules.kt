@@ -2,7 +2,9 @@ package jp.co.stah.kodeintest.di
 
 //import retrofit2.converter.moshi.MoshiConverterFactory
 import android.content.Context
+import jp.co.stah.kodeintest.data.network.HeadersInterceptor
 import jp.co.stah.kodeintest.data.network.httpClient
+import jp.co.stah.kodeintest.data.network.loggingInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import org.kodein.di.Kodein
@@ -27,14 +29,14 @@ fun appModule(appContext: Context) = Module("appModule") {
     bind<Logger>() with singleton { AndroidLogger() }
     bind<Invoker>() with singleton { UseCaseInvoker() }
 */
- //   import(httpAppModule())
+    import(httpAppModule())
    // import(photosAppModule())
 }
 
 
 fun httpAppModule() = Kodein.Module("httpModule") {
-  //  bind<Interceptogit r>(tag = "headers") with singleton { HeadersInterceptor() }
-   // bind<Interceptor>(tag = "logging") with singleton { loggingInterceptor() }
+    bind<Interceptor>(tag = "headers") with singleton { HeadersInterceptor() }
+    bind<Interceptor>(tag = "logging") with singleton { loggingInterceptor() }
     bind<OkHttpClient>() with singleton {
         httpClient(instance(tag = "headers"), instance(tag = "logging"))
     }
